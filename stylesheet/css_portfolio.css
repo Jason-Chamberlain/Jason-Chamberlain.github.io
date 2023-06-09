@@ -1,0 +1,337 @@
+/*=================================
+    GENERAL STYLE
+  =================================*/
+
+body {    
+    margin: 0%; /* Displays site to edge of browser screen */
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    margin-top: 3%;
+    color: #1a1a1a;
+}
+
+h1:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+.white_text {
+    color: #fff;
+}
+
+p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: justify;
+    letter-spacing: 1px;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+p:hover {
+    transform: scale(1.01);
+    transition: transform 1s;
+}
+
+.center {
+    text-align: center;
+}
+
+.center:hover {
+    transform: scale(1.1);
+    transition: transform 2s;
+}
+
+a {
+    color: blue;
+}
+
+q {
+    font-style: italic;
+}
+
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;    
+    display: block; /* allows images to be centered */    
+    margin-left: auto; /* with "margin-right: auto" this centers all images */
+    margin-right: auto;
+}
+
+img:hover {
+    filter: grayscale(5%);
+    transform: scale(1.1);
+    transition: transform 1s;
+}
+
+/* On screens 576px and smaller the images will be 100px tall and centered vertically in the column */
+@media screen and (max-width: 576px) {
+    img {
+        height: 100px;
+        margin-top: 150px;
+    }
+}
+
+footer {
+    padding: 2%;
+    background-color: #fff;
+}
+
+/*=================================
+    NAVBAR STYLE & TRANSITION
+  =================================*/
+
+.Navbar {
+    overflow: hidden;
+    background-color: #000;    
+    position: fixed; /* keeps Navbar at top as we scroll */
+    top: 0;
+    width: 100%;
+    z-index: 1;    
+    -webkit-animation: moveNav 3s; /* sets move animation to 3 seconds for for Safari 4.0 - 8.0 */   
+    animation: moveNav 3s; /* sets move animation to 3 seconds for all other browsers */
+}
+
+@keyframes moveNav {    
+    from {left: -100vw;} /* starts animation of the left side of screen */    
+    to {left: 0vw;} /* ends animation across full screen */
+}
+
+.Navbar a {
+    float: left;    
+    display: block; /* keeps text on the same line instead of new line */    
+    color: #fff;
+    padding: 14px 16px;
+    text-decoration: none; /* removes underline from Navbar links */    
+    font-family: Avant Garde, Helvetica;
+    font-size: 20px;
+    text-align: center;
+    position: relative; /* sets text relative to its normal positioning, allowing us to use the animation */    
+    -webkit-animation: moveNavText 3.75s; /* sets move animation to 3.75 seconds for for Safari 4.0 - 8.0 */
+    animation: moveNavText 3.75s; /* sets move animation to 3.75 seconds for all other browsers */    
+}
+
+@keyframes moveNavText {
+    from {top: -100vw;} /* starts animation 100% above the viewport */
+    to {top: 0vw;} /* This lowers the navbar text onto the navbar */
+}
+
+/* screens 576px and smaller will display navbar links equally distributed */
+@media screen and (max-width: 576px) {
+    .Navbar a {
+        width: 25%; /* This makes each link take up 1/4 of the navbar */        
+        font-size: 12px;
+    }
+}
+
+.Navbar a:hover {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+}
+
+/*=================================
+    VIDEO STYLE & TRANSITION
+  =================================*/
+
+#background_video {
+    filter: grayscale(75%);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    z-index: -1;
+}
+
+/* screens 576px and smaller will not display the background video */
+@media screen and (max-width: 576px) {
+    #background_video {
+        display: none;
+    }
+}
+
+.Video_text {
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    -webkit-animation: moveVideoText 5.75s;
+    animation: moveVideoText 5.73s;
+}
+
+@keyframes moveVideoText {
+    from {top: -100vw;}
+    to {top: 0vw;}
+}
+
+/*=================================
+    TABLE STYLE
+  =================================*/
+
+/* The asterisk is a universal selector that applies this effect to all elements on the page */
+* {
+    box-sizing: border-box;
+}
+
+.Column_1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3%;
+    height: 475px;
+    background-color: #f2f2f2;
+}
+
+.Column_2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    padding-top: 3.5%;
+    height: 475px;
+    background-color: #4d4d4d;
+}
+
+.Column_tall_1 {
+    padding-top: 6%;
+    height: 560px;
+}
+
+.Column_tall_2 {
+    padding-top: 3%;
+    height: 560px;
+}
+
+.Row::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*=================================
+    CONTACT STYLE
+  =================================*/
+
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm fieldset,
+#fs-frm optgroup,
+#fs-frm label,
+#fs-frm #card-element:disabled {
+    font-family: inherit;
+    font-size: 100%;
+    color: inherit;
+    border: none;
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#fs-frm label,
+#fs-frm legend,
+#fs-frm ::placeholder {
+    font-size: .825rem;
+    margin-bottom: .5rem;
+    padding-top: .2rem;
+    display: flex;
+    align-items: baseline;
+}
+
+/* border, padding, margin, width */
+#fs-frm input,
+#fs-frm select,
+#fs-frm textarea,
+#fs-frm #card-element {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: .75em 1rem;
+    margin-bottom: 1.5rem;
+}
+
+#fs-frm input:focus,
+#fs-frm select:focus,
+#fs-frm textarea:focus {
+    background-color: white;
+    outline-style: solid;
+    outline-width: thin;
+    outline-color: gray;
+    outline-offset: -1px;
+}
+
+#fs-frm [type="text"],
+#fs-frm [type="email"] {
+    width: 100%;
+}
+
+#fs-frm [type="button"],
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+    width: auto;
+    cursor: pointer;
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+
+#fs-frm [type="button"]:focus,
+#fs-frm [type="submit"]:focus,
+#fs-frm [type="reset"]:focus {
+    outline: none;
+}
+
+#fs-frm [type="submit"],
+#fs-frm [type="reset"] {
+    margin-bottom: 0;
+}
+
+#fs-frm select {
+    text-transform: none;
+}
+
+#fs-frm [type="checkbox"] {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+    display: inline-block;
+    width: auto;
+    margin: 0 .5em 0 0 !important;
+}
+
+#fs-frm [type="radio"] {
+    -webkit-appearance: radio;
+    -moz-appearance: radio;
+    appearance: radio;
+}
+
+/* address, locale */
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+    display: inline;
+}
+
+#fs-frm fieldset.locale input[name="city"] {
+    width: 52%;
+}
+
+#fs-frm fieldset.locale select[name="state"],
+#fs-frm fieldset.locale input[name="postal-code"] {
+    width: 20%;
+}
+
+#fs-frm fieldset.locale input[name="city"],
+#fs-frm fieldset.locale select[name="state"] {
+    margin-right: 3%;
+}
