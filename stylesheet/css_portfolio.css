@@ -1,337 +1,488 @@
+/*---------------------------------------------
+    ToC
+
+GENERAL STYLE
+GENERAL HOVER EFFECTS
+NAVBAR STYLE & TRANSITION
+VIDEO STYLE & TRANSITION
+SLIDESHOW STYLE
+TABLE STYLE
+
+
+-----------------------------------------------*/
+
 /*=================================
     GENERAL STYLE
-  =================================*/
+===================================*/
+
+:root {                             /* color variables used to make quick color adjustments to page */
+    --white: white;
+    --black: black;
+    --offwhite: #f4f4f4;
+    --charcoal: #1a1a1a;
+    --darkgray: #494949;
+    --lightgray: #d3d3d3;
+    --softgray: #e7e7e7;
+    --teal: #12a2d6;
+    --darkteal: #0a698c;
+    --gold: #daa520;
+    --darkred: #8b0000;
+}
+
+html {
+    scroll-behavior: smooth;        /* ensures page scrolling is smooth when navbar buttons selected */
+}
 
 body {    
-    margin: 0%; /* Displays site to edge of browser screen */
+    margin: 0%;                     /* displays site to edge of browser screen */
+    width: 100vw;                   /* sets width of body to 100% of viewport width */
+    background-color: var(--black); /* sets default background color */
+    opacity: .1;                    /* fades page in on load in combination with transition */
+    transition: opacity 5s;         /* causes a fade in */
+    letter-spacing: .2vw;           /* sets letter spaceing to .2% of viewport width */
+    font-family: 'Trebuchet MS', Optima, Arial, sans-serif; /* sets default font  */
+    font-size: 1.5vw;               /* sets default font size relative to viewport width */                   
+    user-select: none;              /* prevents text or objects from being highlighted */
+    overflow-x: hidden;             /* prevents horizontal scroll bar */
 }
 
 h1 {
-    text-transform: uppercase;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
-    margin-top: 3%;
-    color: #1a1a1a;
-}
-
-h1:hover {
-    filter: grayscale(5%);
-    transform: scale(1.1);
-    transition: transform 1s;
+    text-transform: uppercase;      /* capitalizes all h1 headings */
+    text-align: center;             /* centers all h1 elements */
+    margin-top: 0;                  /* adds small margin above h1 elements */
+    color: var(--darkteal);         /* sets h1 heading text color */
+    transform: scale(1);            /* reverses hover effect */
+    transition: transform .7s, color .7s; /* sets transformtion time */
 }
 
 .white_text {
-    color: #fff;
+    color: var(--white);            /* changes Portfolio Title text color */
+    padding-top: 5vh;               /* adds padding to top of Portfolio Title text */
 }
 
 p {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: justify;
-    letter-spacing: 1px;
-    font-size: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+    font-family: Perpetua, Rockwell Extra Bold; /* changes font type from default */
+    text-align: justify;            /* justifies text within paragraph elements */
+    letter-spacing: .1vw;           /* expands text slightly */
+    padding-left: 4vw;              /* relative padding equal to 4% of viewport width */
+    padding-right: 4vw;             /* relative padding equal to 4% of viewport width */
+    transform: scale(1);            /* reverses hover effect */
+    transition: transform .7s;      /* sets transformtion time */
 }
 
-p:hover {
-    transform: scale(1.01);
-    transition: transform 1s;
+.Video_text p {
+    font-size: 1.75vw;              /* enlarged paragraph text on top panel */    
+}
+
+.Video_text q {
+    font-size: 2vw;                 /* enlarged paragraph text on top panel */
+    color: var(--gold);             /* sets text color */
 }
 
 .center {
-    text-align: center;
-}
-
-.center:hover {
-    transform: scale(1.1);
-    transition: transform 2s;
+    text-align: center;             /*  center aligns text */
 }
 
 a {
-    color: blue;
+    color: var(--teal);             /* sets color of links */
+    cursor: pointer;                /* ensures links have pointer when hovered over */
+    text-decoration: underline;     /* ensures links are underlined */
+}
+
+.Navbar .a {
+    font-weight: bold;              /* sets navbar text bold */
 }
 
 q {
-    font-style: italic;
+    font-style: italic;             /* makes quotes italicized */
 }
 
 img {
-    filter: grayscale(75%);
-    border-radius: 8px;
-    max-width: 100%;
-    height: 340px;    
-    display: block; /* allows images to be centered */    
-    margin-left: auto; /* with "margin-right: auto" this centers all images */
-    margin-right: auto;
-}
-
-img:hover {
-    filter: grayscale(5%);
-    transform: scale(1.1);
-    transition: transform 1s;
-}
-
-/* On screens 576px and smaller the images will be 100px tall and centered vertically in the column */
-@media screen and (max-width: 576px) {
-    img {
-        height: 100px;
-        margin-top: 150px;
-    }
+    filter: grayscale(75%);         /* removes 75% of color from images */
+    border-radius: 8px;             /* slightly rounded corners */
+    max-width: 100%;                /* keeps images within width of their container */
+    display: block;                 /* allows images to be centered */    
+    margin: auto auto auto auto;    /* with "margin-right: auto" this centers all images */    
+    transform: scale(1);            /* reverses hover effect */
+    transition: transform .7s, color .7s; /* sets transformation time */
 }
 
 footer {
-    padding: 2%;
-    background-color: #fff;
+    height: 3vw;                    /* sets height relative to view window */    
+    display: flex;                  /* enables flexbox layout */
+    justify-content: center;        /* centers content horizontally */
+    align-items: center;            /* centers content vertically */
+    overflow: hidden;               /* hides any content that overflows container */
+    background-color: var(--black); /* sets background color */
+    color: var(--white);            /* sets text color */
+}
+
+/*=================================
+    GENERAL HOVER EFFECTS
+===================================*/
+
+h1:hover,                           
+p:hover,
+.center:hover {
+    filter: grayscale(5%);          /* sets slight gray filter */    
+    transform: scale(1.1);          /* increases elements size */    
+    transition: transform .7s, color .7s; /* sets transformation time */    
+}
+
+h1:hover {
+    color: var(--teal);             /* changes h1 heading text color */
+}
+
+p:hover {
+    transform: scale(1.01);         /* increases elements size */
+}
+
+img:hover {
+    filter: grayscale(5%);          /* brings back most of image's color */
 }
 
 /*=================================
     NAVBAR STYLE & TRANSITION
-  =================================*/
+===================================*/
 
 .Navbar {
-    overflow: hidden;
-    background-color: #000;    
-    position: fixed; /* keeps Navbar at top as we scroll */
-    top: 0;
-    width: 100%;
-    z-index: 1;    
-    -webkit-animation: moveNav 3s; /* sets move animation to 3 seconds for for Safari 4.0 - 8.0 */   
-    animation: moveNav 3s; /* sets move animation to 3 seconds for all other browsers */
+    overflow: hidden;               /* ensures overflow content of navbar is not displayed */
+    background-color: var(--black); /* colors navbar black */
+    position: fixed;                /* keeps Navbar at top while scrolling */
+    top: 0;                         /* ensures nothing displayed above navbar */
+    width: 100%;                    /* spans navbar across entire page */
+    z-index: 1;                     /* ensures navbar displays above all other elements */
+    -webkit-animation: moveNav 3s;  /* sets move animation to 3 seconds for for Safari 4.0 - 8.0 */   
+    animation: moveNav 3s;          /* sets move animation to 3 seconds */
 }
 
-@keyframes moveNav {    
-    from {left: -100vw;} /* starts animation of the left side of screen */    
-    to {left: 0vw;} /* ends animation across full screen */
+@keyframes moveNav {                /* animation effect moving navbar in from left on page load */
+    from {left: -100vw;}            /* starts animation off left side of screen */    
+    to {left: 0vw;}                 /* ends animation across full screen */
 }
 
 .Navbar a {
-    float: left;    
-    display: block; /* keeps text on the same line instead of new line */    
-    color: #fff;
-    padding: 14px 16px;
-    text-decoration: none; /* removes underline from Navbar links */    
-    font-family: Avant Garde, Helvetica;
-    font-size: 20px;
-    text-align: center;
-    position: relative; /* sets text relative to its normal positioning, allowing us to use the animation */    
-    -webkit-animation: moveNavText 3.75s; /* sets move animation to 3.75 seconds for for Safari 4.0 - 8.0 */
-    animation: moveNavText 3.75s; /* sets move animation to 3.75 seconds for all other browsers */    
+    float: left;                    /* specifies text floats to left on navbar */
+    display: block;                 /* keeps text on the same line instead of new line */    
+    color: var(--white);            /* sets font color to white */
+    padding: .75vw 1vw;             /* adds padding around text */
+    text-decoration: none;          /* removes underline from Navbar links */    
+    font-family: Avant Garde, Helvetica; /* specifies font family for navbar */
+    font-size: 1.5vw;               /* specifies font size for navbar */
+    text-align: center;             /* centers text in container */
+    position: relative;             /* sets text relative to normal positioning, allowing use of animation */    
+    -webkit-animation: moveNavText 3s; /* sets move animation to 3 seconds for for Safari 4.0 - 8.0 */
+    animation: moveNavText 3s;      /* sets move animation to 3 seconds */    
 }
 
-@keyframes moveNavText {
-    from {top: -100vw;} /* starts animation 100% above the viewport */
-    to {top: 0vw;} /* This lowers the navbar text onto the navbar */
-}
-
-/* screens 576px and smaller will display navbar links equally distributed */
-@media screen and (max-width: 576px) {
-    .Navbar a {
-        width: 25%; /* This makes each link take up 1/4 of the navbar */        
-        font-size: 12px;
-    }
+@keyframes moveNavText {            /* animation effect moving text in from above */
+    from {top: -100vw;}             /* starts animation 100% above viewport */
+    to {top: 0vw;}                  /* lowers navbar text onto navbar */
 }
 
 .Navbar a:hover {
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
+    background-color: var(--offwhite); /* defines background color on hover */
+    color: var(--black);            /* defines text color on hover */
+    cursor: pointer;                /* ensures navbar links have pointer on hover */
+    transition: 0.3s ease-in;       /* creates smooth transition for hover trigger */
+}
+
+.Navbar a.active {
+    background-color: darkgray;   /* defines background color */
+}
+
+@media screen and (max-width: 576px) { /* navbar links distributed equally on screens 576px and smaller */
+    .Navbar a {
+        width: 25%;                 /* each link takes 1/4 of navbar */        
+        font-size: 2vw;             /* sets navbar text size on smaller screens */
+    }
 }
 
 /*=================================
     VIDEO STYLE & TRANSITION
-  =================================*/
+===================================*/
 
 #background_video {
-    filter: grayscale(75%);
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    z-index: -1;
+    filter: grayscale(50%);         /* removes 50% of color from background video */
+    position: fixed;                /* fixes video to page */
+    right: 0;                       /* ensures no space between video and edge of page */
+    bottom: 0;                      /* ensures no space between video and bottom of page */
+    min-width: 100%;                /* displays video accross full width of page */
+    z-index: -1;                    /* places video behind all other elements */
 }
 
-/* screens 576px and smaller will not display the background video */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {  
     #background_video {
-        display: none;
+        display: none;              /* removes video from screens 576px and smaller */
     }
 }
 
 .Video_text {
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    width: 100%;
-    padding: 20px;
-    position: relative;
-    -webkit-animation: moveVideoText 5.75s;
-    animation: moveVideoText 5.73s;
+    background: rgba(0, 0, 0, 0.7); /* provides semi-transparent background for text */
+    color: var(--white);            /* sets font color */
+    width: 100%;                    /* extends container full width of page */
+    height: 100vh;                  /* extends container full height of page */
+    padding-top: 2vh;               /* adds padding to top of container */
+    position: relative;             /* sets text relative to normal positi oning, allowing use of animation */
+    overflow: hidden;               /* prevents horizontal scroll bar appearing when text is hovered */
+    -webkit-animation: moveVideoText 35s; /* sets move animation to 3 seconds for for Safari 4.0 - 8.0 */
+    animation: moveVideoText 3s;    /* sets move animation to 3 seconds */
 }
 
-@keyframes moveVideoText {
-    from {top: -100vw;}
-    to {top: 0vw;}
+@keyframes moveVideoText {          /* animation effect moving text in from above */
+    from {top: -100vw;}             /* starts animation 100% above viewport */
+    to {top: 0vw;}                  /* ends animation down full height of screen */
+}
+
+/*=================================
+    SLIDESHOW STYLE
+===================================*/
+
+#Slideshow_background {
+    background: rgba(255, 255, 255, 0.35); /* creates semi-transparent white background placed over background video */
+    height: 100vh;
+}
+
+.mySlides {
+    display: none;                  /* prevents images from being displayed (JS used to display images) */
+}
+
+#Slideshow_container {
+    width: 29.5vw;                  /* sets width of slideshow container */
+    height: auto;                   /* height of container auto adjusts to content */
+    padding-top: 10%;               /* adds small padding to top */
+    position: relative;             /* sets container relative to normal positioning */
+    margin: auto;                   /* horizontally centers container */
+}
+
+#Slideshow_container a {
+    text-decoration: none;          /* removes underline from Previous / Next buttons */
+}
+
+.Slideshow_images {
+    filter: grayscale(5%);          /* removes 5% of color from background video */
+    vertical-align: middle;         /* centers images vertically in container */
+    height: auto;                   /* height adjusts based on content */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), /* adds shadow around images */
+                0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;                    /* img width adjusts based on content */
+}
+
+.Previous,
+.Next {
+    cursor: pointer;                /* ensures buttons have pointer on hover */
+    position: absolute;             /* ensures buttons positioned within image */
+    top: 50%;                       /* vertically centers buttons */
+    width: auto;                    /* width of buttons adjusted based on content */
+    padding: 2vw;                   /* adds padding to button text */
+    color: var(--darkgray);         /* sets button text color */
+    font-weight: bold;              /* makes text bold */
+    font-size: 2vw;                 /* sets text size */
+    border-radius: 0 6px 6px 0;     /* adds rounded border to top/bottom right corners */
+    user-select: none;              /* user cannot highlight text */
+    transition: 0.3s ease;          /* specifies hover transition details */
+}
+
+.Next {
+    right: 0;                       /* moves next button to right side of image */
+    border-radius: 6px 0 0 6px;     /* moves rounded borders to top/bottom left corners */
+}
+
+.Previous:hover,
+.Next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* makes background transparent gray */
+    color: var(--white);            /* sets text color */
+}
+
+.text {
+    color: var(--white);            /* sets text color */
+    padding: 1vw;                   /* adds padding to text */
+    position: absolute;             /* ensures text positioned within pictures */
+    bottom: 0;                      /* sets text to bottom of image */
+    width: 100%;                    /* element covers full width of image */
+    text-align: center;             /* centers text horizontally */
+    font-family: Perpetua, Rockwell Extra Bold; /* changes font type from default */
+    letter-spacing: .1vw;           /* gives slight spacing between letters */
+    font-size: 1.5vw;               /* sets font size */
+    background-color: rgba(0, 0, 0, 0.75); /* adds semi-transparent background */
+    font-weight: bold;              /* sets text bold */
+    border-radius: 0 0 8px 8px;     /* adds rounded borders to left/right bottom */
+}
+
+.dot {
+    cursor: pointer;                /* ensures dots have pointer on hover */
+    height: 1vw;                    /* dots sized relative to viewport window */
+    width: 1vw;                     /* dots sized relative to viewport window */
+    margin: .25vw;                  /* adds additional spacing between dots */
+    background-color: var(--white); /* sets background color */
+    border-radius: 50%;             /* makes dots circles */
+    display: inline-block;          /* allows dots on same line */
+    transition: background-color 0.6s ease; /* transition details for onclick trigger */
+    z-index: 1;                     /* ensures dots display above all other elements */
+}
+
+.active {
+    background-color: var(--black); /* sets background color */
+}
+
+.dot:hover {
+    background-color: var(--darkgray); /* sets background color */
+}
+
+.fade {
+    animation-name: fade;           /* fade animation defined below */
+    animation-duration: 2.5s;       /* sets animation duration */
+    -webkit-animation-name: fade;   /* fade animation defined below for Safari 4.0-8.0 */
+    -webkit-animation-duration: 2.5s; /* sets animation duration for Safari 4.0-8.0 */
+}
+
+@keyframes fade {
+    from { opacity: .3; filter: grayscale(75%); } /* image starts semi-transparent */
+    to { opacity: 1; filter: grayscale(5%); } /* image ends opaque */
+}
+
+@-webkit-keyframes fade {
+    from { opacity: .4; }           /* image starts semi-transparent */
+    to { opacity: 1; }              /* image ends opaque */
 }
 
 /*=================================
     TABLE STYLE
-  =================================*/
+===================================*/
 
-/* The asterisk is a universal selector that applies this effect to all elements on the page */
-* {
-    box-sizing: border-box;
+
+* {                                 /* asterisk is a universal selector that applies effect to all elements on the page */
+    box-sizing: border-box;         /* creates box with border into which most of the text is placed */
 }
 
-.Column_1 {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    padding-top: 3%;
-    height: 475px;
-    background-color: #f2f2f2;
+.row {
+    display: flex;                  /* sets container as a flex container */
+    width: 100vw;                   /* sets width of row to 100% of viewport width */
+    height: 100vh;                  /* sets height of row to 100% of viewport height */
+    border-bottom: 1px solid var(--darkgray); /* adds border to bottom of each row */    
 }
 
-.Column_2 {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    padding-top: 3.5%;
-    height: 475px;
-    background-color: #4d4d4d;
+.column {
+    display: flex;                  /* sets container as a flex container */
+    flex-direction: column;         /* sets flex direction to column, stacking the elements vertically */
+    width: 100vw;                   /* sets width to 100% of viewport width */
+    justify-content: center;        /* centers elements vertically within the column */
+    align-items: center;            /* centers elements horizontally within the column */
+    text-align: center;             /* centers text horizontally within the column */
+    overflow: hidden;               /* hides content that exceeds column boundaries */
+    padding: 1vw;                   /* dynamically sets padding around column based on viewport width */
 }
 
-.Column_tall_1 {
-    padding-top: 6%;
-    height: 560px;
+.column_narrow {
+    flex-basis: 33%;                /* sets width of column to 33% of available space */
+    background-color: var(--darkgray); /* sets background color of column */
 }
 
-.Column_tall_2 {
-    padding-top: 3%;
-    height: 560px;
+.column_wide {
+    flex-basis: 66%;                /* sets width of the column to 66% of available space */
+    background-color: var(--offwhite); /* sets background color of column */
 }
 
-.Row::after {
-    content: "";
-    display: table;
-    clear: both;
+.column_narrow img {
+    max-width: 85%;                 /* sets maximum width of image to 85% of container width */
+    max-height: 95%;                /* sets maximum height of image to 95% of container height */
+    display: block;                 /* displays image as a block element */
+    margin: 0 auto;                 /* centers image horizontally within container */
 }
 
 /*=================================
     CONTACT STYLE
   =================================*/
 
-#fs-frm input,
-#fs-frm select,
-#fs-frm textarea,
-#fs-frm fieldset,
-#fs-frm optgroup,
-#fs-frm label,
-#fs-frm #card-element:disabled {
-    font-family: inherit;
-    font-size: 100%;
-    color: inherit;
-    border: none;
-    border-radius: 0;
-    display: block;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-#fs-frm label,
-#fs-frm legend,
-#fs-frm ::placeholder {
-    font-size: .825rem;
-    margin-bottom: .5rem;
-    padding-top: .2rem;
-    display: flex;
-    align-items: baseline;
-}
-
-/* border, padding, margin, width */
-#fs-frm input,
-#fs-frm select,
-#fs-frm textarea,
-#fs-frm #card-element {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: .75em 1rem;
-    margin-bottom: 1.5rem;
-}
-
-#fs-frm input:focus,
-#fs-frm select:focus,
-#fs-frm textarea:focus {
-    background-color: white;
-    outline-style: solid;
-    outline-width: thin;
-    outline-color: gray;
-    outline-offset: -1px;
-}
-
-#fs-frm [type="text"],
-#fs-frm [type="email"] {
-    width: 100%;
-}
-
-#fs-frm [type="button"],
-#fs-frm [type="submit"],
-#fs-frm [type="reset"] {
-    width: auto;
+.pop_up_button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 25vw;
+    background-color: var(--darkteal);
+    color: var(--white);
     cursor: pointer;
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
+    -webkit-animation: movePopup 4s;
+    animation: movePopup 4s;
 }
 
-#fs-frm [type="button"]:focus,
-#fs-frm [type="submit"]:focus,
-#fs-frm [type="reset"]:focus {
+@keyframes movePopup {
+    from {right: -540vw;}
+    to {right: 1.75vw;}
+}
+
+@-webkit-keyframes movePopup {
+    from {right: -40vw;}
+    to {right: 1.75vw;}
+}
+
+.form_popup {
+    z-index: 8;
+    display: none;
+    position: fixed;
+    bottom: .5vw;
+    right: .5vw;
+    font-family: 'Trebuchet MS', Optima, Arial, sans-serif;
+}
+
+.form_container {
+    width: 49vw;
+    padding: 1vw;
+    border-radius: .25vw;
+    background-color: var(--softgray);
+    box-shadow: 0 .25vw .5vw 0 rgba(0, 0, 0, 0.75),
+            0 .4vw 1.25vw 0 rgba(0, 0, 0, 0.75);
+}
+
+button,
+.form_container input,
+.form_container textarea {
+    width: 100%;
+    padding: 0.93vw;
+    margin: 0.6vw 0 0.6vw 0;
+    border: none;
+    border-radius: .25vw;
+    background-color: var(--lightgray);
+    font-size: 1vw;
+    
+}
+
+button {
+    letter-spacing: 0.3vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin: 0.3vw 0 0.3vw 0;
+    background-color: var(--darkteal);
+    color: var(--white);
+    cursor: pointer;
+    height: auto;
+    border: none;
+}
+
+
+
+button:hover,
+.form_container .btn:hover {
+    background-color: var(--teal);
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;    
+    box-shadow: 0 .25vw .5vw 0 rgba(0, 0, 0, 0.5),
+                0 .4vw 1.25vw 0 rgba(0, 0, 0, 0.5);
+}
+
+.form_container input:hover,
+.form_container input:focus,
+.form_container textarea:focus,
+.form_container textarea:hover {
+    box-shadow: 0 .25vw .5vw 0 rgba(0, 0, 0, 0.35),
+            0 .4vw 1.25vw 0 rgba(0, 0, 0, 0.35);
+}
+
+.form_container input:focus,
+.form_container textarea:focus {
+    background-color: var(--white);
     outline: none;
 }
-
-#fs-frm [type="submit"],
-#fs-frm [type="reset"] {
-    margin-bottom: 0;
-}
-
-#fs-frm select {
-    text-transform: none;
-}
-
-#fs-frm [type="checkbox"] {
-    -webkit-appearance: checkbox;
-    -moz-appearance: checkbox;
-    appearance: checkbox;
-    display: inline-block;
-    width: auto;
-    margin: 0 .5em 0 0 !important;
-}
-
-#fs-frm [type="radio"] {
-    -webkit-appearance: radio;
-    -moz-appearance: radio;
-    appearance: radio;
-}
-
-/* address, locale */
-#fs-frm fieldset.locale input[name="city"],
-#fs-frm fieldset.locale select[name="state"],
-#fs-frm fieldset.locale input[name="postal-code"] {
-    display: inline;
-}
-
-#fs-frm fieldset.locale input[name="city"] {
-    width: 52%;
-}
-
-#fs-frm fieldset.locale select[name="state"],
-#fs-frm fieldset.locale input[name="postal-code"] {
-    width: 20%;
-}
-
-#fs-frm fieldset.locale input[name="city"],
-#fs-frm fieldset.locale select[name="state"] {
-    margin-right: 3%;
+.form_container .cancel:hover {
+    background-color: var(--darkred);
 }

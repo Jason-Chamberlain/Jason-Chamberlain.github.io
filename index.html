@@ -5,22 +5,25 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Jason Chamberlain</title>
     <meta name="author" content="Jason Chamberlain">
+    <link rel="shortcut icon" type="img/jpg" href="./images/coding_icon.png">
     <link rel="stylesheet" type="text/css" href="./stylesheet/css_portfolio.css">
 </head>
 <!-- END HEAD -->
 
 <!-- BODY -->
 
-<body>
+<body onload="document.body.style.opacity = '1'">
 
     <!-- NAVBAR -->
     <div class="Navbar">
-        <a href="#Home">Home</a>
+        <a class="active" href="#Home">Home</a>
+        <a href="#Slideshow">Slideshow</a>
         <a href="#About">About</a>
         <a href="#GitHub">GitHub</a>
-        <a href="#Contact">Contact</a>
+        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
     </div>
     <!-- END NAVBAR -->
 
@@ -37,14 +40,17 @@
         <h1 class="white_text">Jason Chamberlain</h1>
         <strong>
             <p class="center">
-                <q>Every great developer you know got there by solving problems they
-                    <br>were unqualified to solve until they actually did it.
+                <q>Every great developer you know got there by solving problems they were unqualified to solve until
+                    they actually did it.
                 </q>
+                <br><br>-Patrick McKenzie
+                <br><br>
+                <br>  Welcome to my portfolio website.&nbsp;&nbsp;As a developer, I strongly believe in taking on challenges, even 
+                if they seem difficult at first.&nbsp;&nbsp;By confronting these challenges, I gain valuable knowledge and skills, 
+                allowing me to grow both personally and professionally. 
                 <br>
-                <br> -Patrick McKenzie
-                <br>
-                <br> My name is Jason Chamberlain. Welcome to my portfolio website.
-                <br>On it, I will tell you about my background and experience.
+                <br>Feel free to explore my projects, where you can witness my passion for coding and problem-solving.&nbsp;&nbsp;Let's 
+                connect and discuss how I can contribute to your team, as we work together towards achieving impressive results.
                 <br>
                 <br> Thank you for stopping by and enjoy!
             </p>
@@ -52,41 +58,111 @@
     </div>
     <!-- END HOME -->
 
+    <!-- SLIDESHOW -->
+    <div id="Slideshow">
+        <div id="Slideshow_background">
+            <div id="Slideshow_container">
+                <!-- Slide 1 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_images" src="./images/code.jpg" alt="Computer code">
+                    <div class="text">I'm available to assist you on your project!</div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_images" src="./images/html_css_javascript.jpeg" alt="HTML, CSS and JS logos">
+                    <div class="text">I am a full-stack software developer,<br>trained in: HTML, CSS, Javascript,
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_images" src="./images/python.png" alt="Python logo">
+                    <div class="text">the popular programming language Python,</div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_images" src="./images/c_sharp_dot_net.png" alt="C# logo">
+                    <div class="text">C#, .NET framework, ASP.NET, MVC,</div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_images" src="./images/sql.jpg" alt="SQL logo">
+                    <div class="text">back end development, databases and SQL.</div>
+                </div>
+                <!-- Slide 6 -->
+                <div class="mySlides fade">
+                    <img class="Slideshow_images" src="./images/tablet.jpg" alt="keyboard">
+                    <div class="text"><a class="white_text contact" onclick="openForm()">Contact me now!</a></div>
+                </div>
+                <!-- Previous / Next buttons -->
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br> <!-- Adds space between slideshow images and the dots -->
+
+            <!-- Slideshow dots -->
+            <div style="text-align: center;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+    </div>
+    <!-- END SLIDESHOW -->
+
     <!-- ABOUT -->
-    <div class="Row" id="About">
+    <div class="row" id="About">
         <!-- Left Column -->
-        <div class="Column_2">
-            <img src="./images/tablet.jpg" alt="tablet.jpg">
+        <div class="column column_narrow">
+            <img src="./images/keyboard.jpg" alt="tablet.jpg">
         </div>
         <!-- Right Column -->
-        <div class="Column_1">
-            <h1>About</h1>
-            <p>I am a software developer who loves to code! Despite the unique challenges,
-                <br>I firmly believe that my life experiences and perspectives have enriched my
-                <br>approach to transitioning into this field.
-                <br>
-                <br>With my thirst for continuous learning, the right mindset and an unyielding
-                <br>passion for problem-solving, I believe I can leverage my existing skills to
-                <br>pursue a gratifying career in software engineering.
-                <br>
-                <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">
-                    The Tech Academy&#39;s</a> C# and .NET Bootcamp,
-                <br>trained in the following web and programming languages:
-                <br>HTML, CSS, JavaScript, SQL, C# and more.
-                <br>
-                <br>I am a full-stack developer and would love to work with you on your project.
-                <br><a href="#Contact">Contact</a> me below!
-            </p>
+        <div class="column column_wide">
+            <div class="text_container">
+                <h1>About</h1>
+                <p>
+                    I am a software developer who loves to code!&nbsp;&nbsp;Despite the unique challenges,
+                    I firmly believe that my life experiences and perspectives have enriched my
+                    approach to transitioning into this field.
+                    <br>
+                    <br>With my thirst for continuous learning, the right mindset and an unyielding
+                    passion for problem-solving, I believe I can leverage my existing skills to
+                    pursue a gratifying career in software engineering.
+                    <br>
+                    <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">
+                        The Tech Academy&#39;s</a> C# and .NET Bootcamp,
+                    trained in the following web and programming languages:
+                    <br>
+                    <br><strong><i>HTML, CSS, JavaScript, SQL, C#</i></strong> and more.
+                    <br>
+                    <br>I am a full-stack developer and would love to work with you on your project.
+                    <br>
+                    <br><a class="contact" onclick="openForm()">Contact</a> me now!
+                </p>
+            </div>
         </div>
     </div>
     <!-- END ABOUT -->
 
     <!-- GITHUB -->
-    <div class="Row" id="GitHub">
+    <div class="row" id="GitHub">
         <!-- Left Column -->
-        <div class="Column_1">
+        <div class="column column_wide">
             <h1>GitHub</h1>
-            <p>You can view my coding projects on my GitHub profile here:
+            <p>My GitHub portfolio has been assembled to provide prospective employers with an overview of my coding abilities and
+            training as a software developer.
+            <br>
+            <br>The examples highlight my proficiency in various programming languages and frameworks.&nbsp;&nbsp;While the files 
+            may not be complex, they represent my dedication to learning, my eagerness to contribute as a developer and serve as 
+            stepping stones in my journey towards becoming a skilled professional.
+            <br>
+            <br>I invite you to explore the repository and review the code samples, allowing you to assess my technical expertise,
+            problem-solving skills, and attention to detail.&nbsp;&nbsp;I am eager to collaborate, learn, and contribute to the 
+            success of a development team.
+            <br>
+            <br>You can view my coding projects on my GitHub profile here:
                 <br>
             <p class="center">
                 <a href="https://github.com/Jason-Chamberlain" target="_blank">My GitHub Page</a>
@@ -94,48 +170,42 @@
             </p>
         </div>
         <!-- Right Column -->
-        <div class="Column_2">
-            <a href="https://github.com/Jason-Chamberlain" target="_blank"><img src="./images/GitHub.png" alt="GitHub.png"></a>
+        <div class="column column_narrow">
+            <a href="https://github.com/Jason-Chamberlain" target="_blank"><img src="./images/github.png"
+                    alt="GitHub.png"></a>
         </div>
     </div>
     <!-- END GITHUB -->
 
     <!-- CONTACT -->
-    <div class="Row" id="Contact">
-        <!-- Left Column -->
-        <div class="Column_2 Column_tall_1">
-            <img src="./images/keyboard.jpg" alt="keyboard.jpg">
-        </div>
-        <!-- Right Column -->
-        <div class="Column_1 Column_tall_2">
-            <h1>Contact</h1>
-            <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8"
-                action="https://formspree.io/f/mjvdqzob" method="post">
-                <fieldset id="fs-frm-inputs">
-                    <label for="full-name">Full Name</label>
-                    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
-                    <label for="email-address">Email Address</label>
-                    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
-                    <label for="message">Message</label>
-                    <textarea rows="5" name="message" id="message" placeholder="Your message here"
-                        required=""></textarea>
-                    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-                </fieldset>
-                <input type="submit" value="Submit">
+    <div id="Contact">
+        <button onclick="openForm()" class="pop_up_button">Contact</button>
+        <div class="form_popup" id="myForm">
+            <form action="https://formspree.io/f/mjvdqzob" method="post" class="form_container">
+                <!-- Using https://formspree.io -->
+                <h1>Contact</h1>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" placeholder="Your name..." required><br>
+                <label for="phone">Phone</label><br>
+                <input type="text" id="phone" name="phone" placeholder="Your phone number..."><br>
+                <label for="email">Email</label><br>
+                <input type="text" id="email" name="email" placeholder="Your email..." required><br>
+                <label for="message">Message</label><br>
+                <textarea rows="3" name="message" id="message" placeholder="Your message..." required></textarea><br>
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
             </form>
         </div>
-
     </div>
     <!-- END CONTACT -->
 
     <!-- FOOTER -->
     <footer>
-        <p>
-           <br>
-        </p>
+        <p><a class="contact" onclick="openForm()">Jason Chamberlain</a> | &copy; 2023</p>
     </footer>
     <!-- END FOOTER -->
 
+    <script src="./js/js_portfolio.js"></script>
 </body>
 <!-- END BODY -->
 
