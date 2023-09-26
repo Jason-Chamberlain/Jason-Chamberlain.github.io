@@ -47,30 +47,30 @@ The CSS file contains various styles that define the visual appearance of the po
 ---
 The JavaScript file adds interactivity and dynamic behavior to the portfolio website. Here are the main functions implemented:
 
-1. **Contact Form**: The **'openForm()'** function is triggered when the contact button is clicked, displaying the contact form by setting its display property to "block". The **'closeForm()'** function is triggered when the user clicks off the contact form or clicks the cancel button, hiding the form by setting its display property to "none".
+1. **Contact Form**: The `openForm()` function is triggered when the contact button is clicked, displaying the contact form by setting its display property to `"block"`. The `closeForm()` function is triggered when the user clicks off the contact form or clicks the cancel button, hiding the form by setting its display property to `"none"`.
 
-1. **Slideshow**: The **'showSlides()'** function is responsible for displaying the slideshow images. It takes a parameter called **'slideNumber'** and uses it to show the corresponding slide by setting the display property of each slide and dot element accordingly. The **'plusSlides()'** function is called when the left or right arrows are clicked, updating the slide index and calling **'showSlides()'** to display the updated slide. The **'currentSlide()'** function is called when a dot is clicked, setting the slide index and calling **'showSlides()'** to display the corresponding slide.
+1. **Slideshow**: The `showSlides()` function is responsible for displaying the slideshow images. It takes a parameter called `slideNumber` and uses it to show the corresponding slide by setting the display property of each slide and dot element accordingly. The `plusSlides()` function is called when the left or right arrows are clicked, updating the slide index and calling `showSlides()` to display the updated slide. The `currentSlide()` function is called when a dot is clicked, setting the slide index and calling `showSlides()` to display the corresponding slide.
 
-1. **Closing Contact Form**: The JavaScript code includes an event listener that triggers the **'closeForm()'** function when the user clicks off the contact form. It checks if the clicked element matches the "cancel" class or if the clicked element is not a descendant of the form popup, the pop-up button, or the contact section. If any of these conditions are met, the contact form is closed by calling **'closeForm()'**.
+1. **Closing Contact Form**: The JavaScript code includes an event listener that triggers the `closeForm()` function when the user clicks off the contact form. It checks if the clicked element matches the "cancel" class or if the clicked element is not a descendant of the form popup, the pop-up button, or the contact section. If any of these conditions are met, the contact form is closed by calling `closeForm()`.
 
 These JavaScript functions enhance the user experience by providing functionality for opening and closing the contact form, navigating the slideshow, and closing the contact form when the user interacts with other parts of the page.
 
-## Learnings from the Class
+## Key Concepts
 ---
-Based on the provided HTML, CSS, and JavaScript files, it can be inferred that the class that included this project covered several topics related to web development, including:
+The following topics related to web development, including:
 
-- **HTML structure**: The class likely covered the basic structure of an HTML document, including the use of doctype declaration, head section, and body section. Students would have learned how to organize and structure content using HTML elements.
+- **HTML structure**: The basic structure of an HTML document, including the use of doctype declaration, head section, and body section. Students would have learned how to organize and structure content using HTML elements.
 
-- **CSS styling**: The class covered CSS selectors, properties, and values to apply styles to HTML elements. Students learned how to modify the appearance of text, backgrounds, layouts, and create visual effects using CSS.
+- **CSS styling**: CSS selectors, properties, and values to apply styles to HTML elements. Students learned how to modify the appearance of text, backgrounds, layouts, and create visual effects using CSS.
 
-- **Responsive design**: The class likely emphasized the importance of designing websites that work well on different devices and screen sizes. This is evident in the use of media queries and relative units like viewport width (vw) and viewport height (vh) throughout the CSS file.
+- **Responsive design**: The importance of designing websites that work well on different devices and screen sizes. This is evident in the use of media queries and relative units like viewport width (vw) and viewport height (vh) throughout the CSS file.
 
-- **Animation and transitions**: The CSS file demonstrates the use of animations and transitions to create visual effects. Students would have learned how to define keyframes and apply them to elements using CSS animations, as well as how to create smooth transitions for hover effects.
+- **Animation and transitions**: The CSS file demonstrates the use of animations and transitions to create visual effects. Knowledge was gained on how to define keyframes and apply them to elements using CSS animations, as well as how to create smooth transitions for hover effects.
 
-- **Flexbox layout**: The CSS file includes the use of flexbox layout for the about and GitHub sections. This suggests that the class covered the basics of flexbox, including the use of flex containers and flex items to create responsive and flexible layouts.
+- **Flexbox layout**: The CSS file includes the use of flexbox layout for the About and GitHub sections. The basics of flexbox, including the use of flex containers and flex items to create responsive and flexible layouts was learned.
 
-- **JavaScript integration**: The JavaScript file provided functionality for the slideshow, contact form, and other interactive elements. This indicates that the class covered the integration of JavaScript code into web pages to add interactivity and dynamic behavior.
+- **JavaScript integration**: The JavaScript file provided functionality for the slideshow, contact form, and other interactive elements. The integration of JavaScript code into web pages adds interactivity and dynamic behavior.
 
-- **DOM manipulation**: The JavaScript code interacts with the Document Object Model (DOM) to access and modify elements on the page. Students would have learned how to use JavaScript to select elements, add event listeners, and update styles and content dynamically.
+- **DOM manipulation**: The JavaScript code interacts with the Document Object Model (DOM) to access and modify elements on the page. Learned how to use JavaScript to select elements, add event listeners, and update styles and content dynamically.
 
-Overall, the class that included this project provided a comprehensive introduction to web development concepts, including HTML structure, CSS styling, responsive design, animations, flexbox layout, JavaScript integration, and DOM manipulation.
+Overall, this project provided a comprehensive introduction to web development concepts, including HTML structure, CSS styling, responsive design, animations, flexbox layout, JavaScript integration, and DOM manipulation.
